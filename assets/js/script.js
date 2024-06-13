@@ -1,3 +1,5 @@
+// assets/js/script.js
+
 import { registrarPersona, obtenerPersonas, actualizarPersona, eliminarPersona } from "./promesas.js";
 
 // Funcionalidades de accesibilidad
@@ -24,8 +26,55 @@ window.addEventListener("load", () => {
     cargarDatos();
 });
 
+// Función para validar el formulario
+const validarFormulario = () => {
+    let eNombre = document.getElementById("nombre");
+    let eApellido = document.getElementById("apellido");
+    let ePais = document.getElementById("pais");
+    let eAsunto = document.getElementById("asunto");
+    let eCorreo = document.getElementById("correo");
+    let eTelefono = document.getElementById("telefono");
+    let eEdad = document.getElementById("edad");
+    let eSuscripcion = document.getElementById("suscripcion");
+
+    if (!eNombre.value.trim()) {
+        alert("El nombre es requerido");
+        return false;
+    }
+    if (!eApellido.value.trim()) {
+        alert("El apellido es requerido");
+        return false;
+    }
+    if (!ePais.value.trim()) {
+        alert("El país es requerido");
+        return false;
+    }
+    if (!eAsunto.value.trim()) {
+        alert("El asunto es requerido");
+        return false;
+    }
+    if (!eCorreo.value.trim() || !eCorreo.value.includes("@")) {
+        alert("El correo electrónico es requerido y debe ser válido");
+        return false;
+    }
+    if (!eTelefono.value.trim() || isNaN(eTelefono.value)) {
+        alert("El teléfono es requerido y debe ser un número");
+        return false;
+    }
+    if (!eEdad.value.trim() || isNaN(eEdad.value) || eEdad.value < 0) {
+        alert("La edad es requerida y debe ser un número positivo");
+        return false;
+    }
+
+    return true;
+};
+
 // Función para registrar una nueva persona
 const registrar = () => {
+    if (!validarFormulario()) {
+        return;
+    }
+
     // Recuperar elementos
     let eNombre = document.getElementById("nombre");
     let eApellido = document.getElementById("apellido");
@@ -116,6 +165,10 @@ const cargarDatos = () => {
 
 // Función para actualizar una persona
 const actualizar = () => {
+    if (!validarFormulario()) {
+        return;
+    }
+
     // Recuperar elementos
     let eNombre = document.getElementById("nombre");
     let eApellido = document.getElementById("apellido");
