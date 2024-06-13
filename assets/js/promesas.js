@@ -1,18 +1,28 @@
-import { db } from "firebase/firestore";
-import { doc, collection, addDoc, updateDoc, setDoc,deleteDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+// assets/js/promesas.js
 
-export const editar = async (formulario) =>{
-    const ref = doc ( db) 
-    await updateDoc (ref,formulario)
-}
+import { db } from "./firebase.js";
+import { addDoc, collection, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-export const eliminar = async (formulario) =>{
-    const ref = doc ( db) 
-    await deleteDoc (ref,formulario)
-}
-return; alert ("se ha eliminado el formulario")
+export const registrarPersona = async (persona) => {
+    await addDoc(collection(db, "personas"), persona);
+};
 
-export const agregar = async (formulario) =>{
-    const ref = doc (db)
-    await addDoc (db,formulario)
-}
+export const obtenerPersonas = async () => {
+    const ref = collection(db, "personas");
+    const qSnap = await getDocs(ref);
+    let listado = [];
+    qSnap.forEach((doc) => {
+        listado.push({ ...doc.data(), id: doc.id });
+    });
+    return listado;
+};
+
+export const actualizarPersona = async (objeto, id) => {
+    const ref = doc(db, "personas", id);
+    await updateDoc(ref, objeto);
+};
+
+export const eliminarPersona = async (id) => {
+    const ref = doc(db, "personas", id);
+    await deleteDoc(ref);
+};

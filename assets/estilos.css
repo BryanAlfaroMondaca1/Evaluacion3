@@ -1,0 +1,176 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.menu {
+  background-color: #cc0000;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #ff3333;
+  color: white;
+}
+
+.menu a.activo {
+  background-color: #990000;
+  color: white;
+}
+
+
+.accesibilidad {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.accesibilidad button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #cc0000;
+  color: white;
+  border-radius: 4px;
+}
+
+.accesibilidad button:hover {
+  background-color: #990000;
+}
+
+.alto-contraste {
+  background-color: black;
+  color: white;
+}
+
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type="submit"] {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #990000;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+thead {
+  background-color: #cc0000;
+  color: #fff;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #cc0000;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #990000;
+}
+
+
+.enlaces {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.enlaces a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #cc0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.enlaces a:hover {
+  background-color: #990000;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+}

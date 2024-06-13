@@ -1,136 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document bryanalfaro</title>
     <link rel="stylesheet" href="assets/estilos.css">
     <script type="module" src="assets/js/firebase.js"></script>
     <script type="module" src="assets/js/script.js"></script>
-    <title>Document</title>
 </head>
 <body>
-    <div class="Menu">
-        <a href="#" class="active">Navegador</a>
-        <a href="#section1"> Mision</a>
-        <a href="#section2">Vision</a>
-        <a href="#section3">Quienes Somos</a>
-        <a href="#section4">Video</a>
-        <a href="#section5">Mapa</a>
-        <a href="#section6">Formulario</a>
+    <div class="contenedor">
+        <div class="menu">
+            <a href="#" class="activo">Navegador</a>
+            <a href="#section1">Misión</a>
+            <a href="#section2">Visión</a>
+            <a href="#section3">Quiénes Somos</a>
+            <a href="#section4">Video</a>
+            <a href="#section5">Mapa</a>
+            <a href="#section6">Formulario</a>
+        </div>
+
+        <div id="controles-accesibilidad" class="accesibilidad">
+            <button onclick="aumentarTamañoFuente()">A+</button>
+            <button onclick="disminuirTamañoFuente()">A-</button>
+            <button onclick="alternarContraste()">Contraste</button>
+        </div>
+
+        <h1>El propósito de CocaCola</h1>
+        <img src="https://www.coca-cola.com/content/dam/onexp/es/es/body/conocenos/informacion-corporativa/mision-vision-valores/mision-vision.jpg/width1960.jpg" alt="Trulli" width="500" height="333">
+
+        <h2 id="section1">Misión</h2>
+        <p> El propósito de CocaCola es refrescar al mundo y marcar la diferencia en la vida de las personas, la sociedad y el planeta.
+            The CocaCola Company nació en 1886 con el propósito de refrescar al mundo, no solo en un sentido puramente físico, sino también espiritual. Desde entonces, ha crecido enormemente como negocio compartiendo alegría y optimismo, y ha marcado la diferencia con sus marcas y valores. Hoy, es una compañía total de bebidas con más de 500 marcas en casi todas las categorías y más de 700.000 personas haciendo llegar diariamente esas bebidas a clientes y consumidores.
+        </p>
+
+        <h2 id="section2">Visión</h2>
+        <p> Su visión es crear las marcas y ofrecer las bebidas que la gente desea para refrescarla en todos los sentidos. Y hacerlo a través de un negocio más sostenible y construyendo un futuro mejor para todos, que marque la diferencia en la vida de las personas, la sociedad y el planeta.
+        </p>
+
+        <h2 id="section3">Quiénes somos</h2>
+        <p> La historia de Coca-Cola comenzó en 1886 cuando el Dr. John S. Pemberton, un farmacéutico de Atlanta, buscaba un medicamento para curar su adicción a la morfina adquirida durante la guerra civil estadounidense. Desarrolló una fórmula en forma de jarabe y lo mezcló con agua carbonatada. Su contable, Frank M. Robinson, cuando probó la bebida pensó en comercializarla, él diseñó el logotipo y le dio el nombre de Coca-Cola por sus dos ingredientes principales: hojas de coca y nueces de cola.
+        </p>
+
+        <h2 id="section4">Video</h2>
+        <p></p>
+
+        <h2 id="section5">Mapa</h2>
+        <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+        <img src="https://image.cnbcfm.com/api/v1/image/107276182-1690291752152-gettyimages-1484918600-0j7a5488_y2ubjzls.jpeg?v=1707771147" alt="Workplace" usemap="#workmap" width="400" height="379">
+        <map name="workmap">
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="#section2">
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="#section3">
+            <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="section4">
+        </map>
+
+        <h2 id="section6">Formulario de Retroalimentación</h2>
+        <h3>Envíanos tu opinión sobre nuestros productos y servicios</h3>
+        <form id="miFormulario">
+            <div class="contacto">
+                <label for="nombre">Primer Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre.." required>
+                
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido.." required>
+                
+                <label for="pais">País</label>
+                <select id="pais" name="pais" required>
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canadá</option>
+                    <option value="usa">EE.UU.</option>
+                </select>
+                
+                <label for="asunto">Asunto</label>
+                <textarea id="asunto" name="asunto" placeholder="Escribe algo.." style="height:200px" required></textarea>
+                
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="Tu correo.." required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono.." required>
+
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" name="edad" placeholder="Tu edad.." min="0" required>
+
+                <label for="suscripcion">Suscribirse al boletín</label>
+                <input type="checkbox" id="suscripcion" name="suscripcion">
+
+                <button type="button" id="btnRegistrar">Enviar Datos</button>
+                <button type="button" id="btnActualizar" disabled>Actualizar Datos</button>
+            </div>
+        </form>
+
+        <h3>Datos Registrados</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>País</th>
+                    <th>Asunto</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Edad</th>
+                    <th>Suscripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+        </table>
+
+        <div class="enlaces">
+            <a href="https://www.facebook.com">Visitar facebook.com!</a>
+            <a href="https://www.twitter.com">Visitar twitter.com!</a>
+            <a href="https://www.google.com">Visitar google.com!</a>
+        </div>
     </div>
-    
-    <h1>El propósito de CocaCola</h1>
-
-<img src="https://www.coca-cola.com/content/dam/onexp/es/es/body/conocenos/informacion-corporativa/mision-vision-valores/mision-vision.jpg/width1960.jpg" alt="Trulli" width="500" height="333">
-    <h2 id="section1">Mision</h2>
-    <p> El propósito de CocaCola es refrescar al mundo y marcar la diferencia en la vida de las personas, la sociedad y el planeta
-        The CocaCola Company nació en 1886 con el propósito de refrescar al mundo, no solo en un sentido puramente físico, sino también espiritual. Desde entonces, ha crecido enormemente como negocio compartiendo alegría y optimismo, y ha marcado la diferencia con sus marcas y valores. Hoy, es una compañía total de bebidas con más de 500 marcas en casi todas las categorías y más de 700.000 personas haciendo llegar diariamente esas bebidas a clientes y consumidores.
-        
-        Pero, si miramos hacia adelante, comprobamos que el mundo se enfrenta a numerosos y nuevos desafíos; The CocaCola Company también. Por ello, cabe preguntarse: ¿sigue siendo válido el propósito original de la compañía?
-        
-        En la actualidad, esta razón de ser -refrescar al mundo y marcar la diferencia- es más necesaria que nunca, de modo que hay que reflejarla a lo grande. Así, no se trata solo de refrescar a los consumidores en cuerpo y alma, sino también al planeta -minimizando al máximo la huella ambiental-; a las comunidades en las que CocaCola opera -generando oportunidades para las personas y cambios significativos en sus vidas-; y a los trabajadores, fomentando su desarrollo personal y profesional.
-        
-        Con este propósito claro, emerge la visión de la compañía para los próximos años. Y no es otra que, en primer lugar, poner en el mercado bebidas que cautiven a la gente, que satisfagan sus gustos y necesidades. En segundo lugar, seguir manteniendo el liderazgo con un modelo de negocio más sostenible que sea parte de la solución e inspire cambios positivos. Y en tercer lugar, se trata de invertir en las personas para mejorar sus vidas y construir un futuro mejor para todos, desde los empleados y todos aquellos que tienen relación con la compañía y sus socios embotelladores, hasta los inversores y el enorme abanico de comunidades en las que CocaCola está presente.
-        
-        Pero para que esta visión se materialice, hay que fomentar una determinada cultura interna. Sin duda, hay muchos aspectos valiosos de la cultura de CocaCola, pero hay dos que sobresalen por encima del resto. Uno es el que lleva a sus miembros a actuar con mentalidad de crecimiento, con un enfoque amplio de lo que se puede llegar a hacer, porque esa es la fuerza que impulsa a la construcción de un futuro mejor. Y el otro es el compromiso ético de la compañía, la brújula que le guía en todo momento a hacer lo correcto. 
-        
-        A continuación, se describe con más detalle la misión, visión y valores de CocaCola.  </p>
-    <h2 id="section2">Vision</h2>
-    <p> Su visión es crear las marcas y ofrecer las bebidas que la gente desea para refrescarla en todos los sentidos. Y hacerlo a través de un negocio más sostenible y construyendo un futuro mejor para todos, que marque la diferencia en la vida de las personas, la sociedad y el planeta. Esto se sustenta en tres pilares que están conectados:
-
-        Marcas que cautivan
-        The CocaCola Company crea las marcas que los consumidores desean, y esto lo consigue con:
-        
-         
-        
-        Pasión por las personas. La compañía se preocupa por entender a las personas y su mundo para intentar mejorarlo.
-        Vanguardia y excelencia en ingredientes, innovación, diseño y marketing. Su ventaja competitiva pasa por ser líder mundial en estas áreas. Es la combinación mágica que trajo la marca CocaCola, y será la esencia de cualquier marca de éxito de la compañía en el futuro. También es la base de su férreo compromiso con la seguridad y la calidad.
-        Inversión en liderazgo en todas las categorías. The CocaCola Company inspira momentos de alegría y optimismo a través de sus marcas, reforzando las que son líderes, impulsando las que aspiran a serlo y explorando otras nuevas.
-        Actuación a nivel mundial y local. Pocas empresas son tan globales y, a la vez, tan locales como The CocaCola Company. Gracias a su sistema de negocio de la mano de sus socios embotelladores, es muy española en España o muy japonesa en Japón. Sabe cómo actuar a escala planetaria y cómo abrazar la cultura local, estableciendo relaciones duraderas con las comunidades en las que opera.
-        Alianzas comerciales potentes. Los socios embotelladores de The CocaCola Company se sitúan a la cabeza mundial en comercialización, distribución y cadena de suministro. Además, conocen mejor que nadie las necesidades locales para construir y amplificar las marcas de la compañía, y crear valor. Estas relaciones sólidas a largo plazo son fundamentales para el ecosistema de la empresa.
-        De forma sostenible
-        The CocaCola Company quiere marcar la diferencia en la vida de la gente, la sociedad y el planeta. Esto significa utilizar su liderazgo para ser parte de la solución hacia un mundo más sostenible. 
-        
-         
-        
-        Hacer crecer el negocio, reducir el azúcar y ofrecer más opciones al consumidor. A todos nos preocupa nuestro bienestar, por eso la compañía apoya la recomendación de la OMS de limitar el consumo diario de azúcares añadidos y en España lleva más de 30 años ofreciendo bebidas sin ellos. Para The CocaCola Company, crecer mientras disminuye el total de azúcar de sus bebidas es posible. Por ello, se marca como prioridad seguir reformulando sus productos, comercializar envases más pequeños, desarrollar una política de marketing responsable e innovar en ingredientes dulces naturales, no calóricos, que puedan suponer opciones realmente novedosas.
-        Aplicar la economía circular a la gestión de los envases. The CocaCola Company quiere que sus bebidas, además de fáciles de consumir, sean también fáciles de reciclar y reutilizar. Y es que la cantidad de residuos que generamos como sociedad es insostenible. En este sentido, la compañía quiere ser parte de la solución y asume su rol de empresa líder para impulsar la economía circular.
-        
-        Así, ha integrado de lleno el packaging en su estrategia de negocio, invirtiendo recursos y talento para aplicar la economía circular a sus envases. Su compromiso es claro: recoger una lata o una botella por cada bebida que ponga en el mercado para que no terminen como residuos, y poder reciclar y reutilizar más. De este modo, se consigue dar valor a cada envase y reducir la materia prima para producir nuevas botellas.
-        
-        Asimismo, la compañía está reduciendo el plástico de un solo uso. En España, trabaja para que la persona que compre un pack de sus bebidas ya no tenga que tirar el film retráctil o las anillas de plástico. Encontrará cartón certificado PEFC, resistente, que las agrupa cómodamente y es más sencillo de reciclar.
-        
-        Todo esto no podría hacerlo sola. Trabaja junto a sus socios embotelladores y codo con codo con gobiernos, ONG y fabricantes para avanzar juntos hacia un mundo más respetuoso con el medio ambiente.
-        Alcanzar el equilibrio hídrico. El agua es imprescindible para la vida. El primer gran objetivo de The CocaCola Company en materia de agua fue alcanzar el equilibrio hídrico en 2020. La compañía lo consiguió a nivel global cinco años antes de lo previsto al devolver a la naturaleza el 100% del agua contenida en sus bebidas a través de diversas intervenciones y proyectos medioambientales.
-        
-        Continuará por este camino y trabajará para asegurar la disponibilidad de agua, especialmente en los países donde escasea.
-        Reducir la huella de carbono. La sociedad espera de The CocaCola Company que también asuma el liderazgo en transparencia. Por eso, en España publica anualmente su huella de carbono. Además, emplea un enfoque científico basado en datos para establecer próximas metas y acciones para disminuir significativamente sus emisiones de CO2, hasta el punto de que se ha propuesto alcanzar la neutralidad en carbono en 2040 en Europa Occidental..
-        Contar con fuentes de suministro éticas y sostenibles. Tener los mejores ingredientes en las bebidas significa también que la cadena de suministro sea sostenible y ética. Así, la compañía trabaja para mejorar las prácticas de sus proveedores, lo que incluye el respeto a los derechos humanos.
-        Por un futuro mejor para todos
-        Para la compañía, las personas importan. Están por delante del negocio. Por este motivo quiere que su actividad ayude a mejorar sus vidas, desde las de los empleados hasta las de los miembros de las comunidades en las que está presente.
-        
-         
-        
-        Invertir en el crecimiento personal y el talento de los empleados. The CocaCola Company promueve una cultura interna que saca lo mejor de cada individuo. En su seno, no caben líderes que solo sean buenos haciendo su trabajo; tienen que ser también buenos potenciando al máximo el desarrollo personal y profesional de los integrantes de sus equipos.
-        Empoderar, fomentar la igualdad de oportunidades y ser más inclusiva. La compañía aspira a ser tan diversa como los consumidores a los que sirve. En este camino, invertir en los jóvenes es invertir en riqueza social. Ellos son el futuro. Así, en España les ofrece experiencias inolvidables que estimulan su aprendizaje y madurez para que afronten el futuro con confianza, ya sea a través de la escritura creativa, el teatro o la formación profesional.
-        
-        Un mundo mejor también pasa por que las mujeres tengan más poder de decisión, lo que empieza por la propia compañía, que está acelerando la presencia femenina en los puestos de dirección. También trata de reducir la brecha de género en la sociedad, apostando por el talento femenino con la puesta en marcha de diferentes proyectos a nivel local.
-        
-        Pero se trata de una diversidad entendida en su sentido más amplio: no solo de género o de edad, sino también intergeneracional, funcional, de formación o de procedencia.
-        Ayudar a crecer a los clientes. The CocaCola Company se esfuerza para que sus marcas y políticas se conviertan en elementos claves del proceso de crecimiento de sus clientes, tanto grandes como pequeños. En esta ruta, los involucra para lograr un futuro más sostenible.
-        Apoyar a las comunidades locales. El objetivo es conseguir que el legado de décadas de la compañía apoyando a las comunidades en las que opera perdure en el tiempo para seguir transformando vidas y generando cambios significativos dentro de ellas. A esto también contribuye la Fundación CocaCola.
-        Ser rentable para los accionistas. Los inversores de The CocaCola Company son tanto grandes organizaciones como pequeños ahorradores. Invierten su dinero porque esperan que la empresa crezca, de modo que entre los compromisos de la compañía está indudablemente que dichas inversiones generen rentabilidad. </p>
-    <h2 id="section3">Quienes somos</h2>
-    <p> La historia de Coca-Cola comenzó en 1886 cuando el dr.John S. Pemberton, un farmacéutico de Atlanta, buscaba un medicamento para curar su adicción a la morfina adquirida durante la guerra civil estadounidense. Desarrolló una fórmula en forma de jarabe y lo mezcló con agua carbonatada. Su contable, Frank M. Robinson, cuando probó la bebida pensó en comercializarla, él diseñó el logotipo y le dio el nombre de Coca-Cola por sus dos ingredientes principales: hojas de coca y nueces de cola.
-
-        Las primeras ventas tuvieron lugar en la farmacia Jacob, en Atlanta, como una bebida medicinal que se servía en un vaso a cinco centavos. En 1888, Pemberton vendió la fórmula a Asa G. Candler, quien fundó The Coca-Cola Company con sede en Atlanta. Bajo el liderazgo del sr. Candler, la distribución de Coca-Cola se expandió como fuentes de soda. </p>
-    <h2 id="section4">Video</h2>
-    <h2 id="section5">Mapa</h2>
-    
-  
-    <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
-    
-    <img src="https://image.cnbcfm.com/api/v1/image/107276182-1690291752152-gettyimages-1484918600-0j7a5488_y2ubjzls.jpeg?v=1707771147" alt="Workplace" usemap="#workmap" width="400" height="379">
-    
-    <map name="workmap">
-      <area shape="rect" coords="34,44,270,350" alt="Computer" href="#section2">
-      <area shape="rect" coords="290,172,333,250" alt="Phone" href="#section3">
-      <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="section4">
-    </map>
-
-    <h2 id="section6">Formulario</h2>
-
-    <h3> Contacto </h3>
-    <FORm>
-        <div class="contacto">
-            <form action="/action_page.php">
-              <label for="nombre">Primer Nombre</label>
-              <input type="text" id="nombre" name="nombre" placeholder="tu nombre..">
-          
-              <label for="lname">Apellido</label>
-              <input type="text" id="apellido" name="apellido" placeholder="tu apellido..">
-          
-              <label for="pais">Pais</label>
-              <select id="pais" name="pais">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-              </select>
-          
-              <label for="subject">Subject</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-          
-              <label for="subject">pruebaTEXTAREA</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-              <input type="button" value="Enviar Datos">
-            </form>
-          </div>
-    </FORm>
-    <div class="links">
-    <a href="https://www.facebook.com">Visit facebook.com!</a>
-    <a href="https://www.twitter.com">Visit twitter.com!</a>
-    <a href="https://www.google.com">Visit google.com!</a>
-</div>
 </body>
 </html>
